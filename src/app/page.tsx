@@ -1,62 +1,85 @@
 import Link from "next/link";
 import Image from "next/image";
+import { BrandTicker } from '@/components/home/BrandTicker';
 
 export default function Home() {
   return (
     <div className="flex flex-col gap-16 pb-16">
       {/* Hero Section */}
-      <section className="relative h-[80vh] w-full bg-[var(--color-bg-secondary)] overflow-hidden flex items-center justify-center">
-        <div className="absolute inset-0 z-0 opacity-50 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-200 via-gray-100 to-white dark:from-gray-800 dark:via-gray-900 dark:to-black"></div>
+      <section className="relative min-h-[90vh] w-full flex items-center justify-center overflow-hidden bg-background">
+        {/* Video Background - Premium Lifestyle Style */}
+        <div className="absolute inset-0 w-full h-full overflow-hidden">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover opacity-60 scale-105"
+            poster="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=1920"
+          >
+            {/* Video local de /public */}
+            <source src="/mixkit-woman-modeling-a-short-black-dress-805-hd-ready.mp4" type="video/mp4" />
+          </video>
+          {/* Premium Dark Overlay with Vignette Effect */}
+          <div className="absolute inset-0 bg-gradient-radial from-background/70 via-background/80 to-background/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-background/80"></div>
+          <div className="absolute inset-0 bg-grid opacity-5"></div>
+        </div>
 
-        {/* Abstract Background Element (placeholder for high-res image) */}
-        <div className="absolute inset-0 z-0 bg-grid-slate-200/50 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:bg-grid-slate-700/25"></div>
+        {/* Subtle Accent Orbs */}
+        <div className="absolute top-1/4 left-1/4 w-[350px] h-[350px] bg-primary/8 blur-[90px] rounded-full animate-float"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] bg-secondary/8 blur-[80px] rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
 
         <div className="container relative z-10 text-center animate-fade-in">
-          <span className="inline-block py-1 px-3 rounded-full bg-[var(--color-accent)]/20 text-[var(--color-accent)] text-xs font-bold uppercase tracking-widest mb-6">
-            New Collection 2024
+          <span className="inline-block py-2 px-4 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-bold uppercase tracking-widest mb-8 backdrop-blur-md">
+            Nueva Colección 2024
           </span>
-          <h1 className="h1 mb-6 max-w-4xl mx-auto">
-            Redefine Your <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-text-primary)] to-[var(--color-text-tertiary)]">Everyday Luxury</span>
+          <h1 className="h1 mb-8 max-w-5xl mx-auto leading-tight">
+            Transformá tu estilo con <br />
+            <span className="text-gradient">Tecnología y Diseño Premium</span>
           </h1>
-          <p className="text-lg text-[var(--color-text-secondary)] mb-8 max-w-2xl mx-auto">
-            Discover a curated selection of premium essentials designed to elevate your lifestyle.
-            Meticulously crafted, timelessly designed.
+          <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
+            Descubrí una selección curada de esenciales que elevan tu día a día.
+            Calidad, estética y funcionalidad en un solo lugar.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/products" className="btn btn-primary text-lg px-8">
-              Shop Collection
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Link href="/products" className="btn btn-primary text-lg">
+              Ver Colección
             </Link>
-            <Link href="/about" className="btn btn-secondary text-lg px-8">
-              Explore Our Story
+            <Link href="/about" className="btn btn-secondary text-lg">
+              Nuestra Historia
             </Link>
           </div>
         </div>
       </section>
 
+      {/* Brand Ticker */}
+      <BrandTicker />
+
       {/* Featured Categories */}
       <section className="container">
-        <div className="flex justify-between items-end mb-8">
-          <h2 className="h2">Curated Categories</h2>
-          <Link href="/products" className="text-sm font-medium border-b border-[var(--color-text-primary)] pb-0.5 hover:text-[var(--color-text-secondary)] transition-colors">
-            View All
+        <div className="flex justify-between items-end mb-12">
+          <h2 className="h2 text-gradient">Categorías Destacadas</h2>
+          <Link href="/products" className="text-sm font-bold text-primary hover:text-primary-hover transition-colors uppercase tracking-wider">
+            Ver Todo &rarr;
           </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
-            { name: 'Apparel', image: 'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&q=80&w=800', count: '124 Items' },
-            { name: 'Accessories', image: 'https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&q=80&w=800', count: '48 Items' },
-            { name: 'Footwear', image: 'https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&q=80&w=800', count: '76 Items' },
+            { name: 'Ropa', image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&q=80&w=800', count: '124 Items' },
+            { name: 'Accesorios', image: 'https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&q=80&w=800', count: '48 Items' },
+            { name: 'Calzado', image: 'https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&q=80&w=800', count: '76 Items' },
           ].map((category) => (
             <Link key={category.name} href={`/products?category=${category.name.toLowerCase()}`} className="group relative h-[400px] overflow-hidden rounded-lg">
-              {/* Use Next.js Image for production, simplified here with unoptimized for external URLs without config */}
-              <div className="absolute inset-0 bg-gray-200 dark:bg-gray-800">
-                {/* <img
+              <div className="absolute inset-0 bg-muted/20">
+                <Image
                   src={category.image}
                   alt={category.name}
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                /> */}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
               </div>
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors"></div>
               <div className="absolute bottom-0 left-0 p-8 w-full">
@@ -70,66 +93,80 @@ export default function Home() {
 
       {/* Trending Now / Best Sellers */}
       <section className="container">
-        <h2 className="h2 mb-8 text-center">Trending Essentials</h2>
+        <h2 className="h2 mb-8 text-center">Indispensables del Momento</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Mock Products */}
-          {Array.from({ length: 4 }).map((_, i) => (
-            <div key={i} className="card group">
-              <div className="relative aspect-[3/4] bg-[var(--color-bg-secondary)] overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center text-[var(--color-text-tertiary)]">
-                  Item {i + 1} Image
+          {Array.from({ length: 4 }).map((_, i) => {
+            const productImages = [
+              'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&q=80&w=800',
+              'https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&q=80&w=800',
+              'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&q=80&w=800',
+              'https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&q=80&w=800',
+            ];
+
+            return (
+              <div key={i} className="card group">
+                <div className="relative aspect-[3/4] bg-muted/30 overflow-hidden">
+                  <Image
+                    src={productImages[i]}
+                    alt={`Remera Premium Essential ${i + 1}`}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  />
+                  {/* Badge */}
+                  {i === 0 && (
+                    <span className="absolute top-3 left-3 bg-foreground text-background text-xs font-bold px-2 py-1 uppercase tracking-wider z-10">
+                      Más Vendido
+                    </span>
+                  )}
                 </div>
-                {/* Badge */}
-                {i === 0 && (
-                  <span className="absolute top-3 left-3 bg-[var(--color-text-primary)] text-[var(--color-bg-primary)] text-xs font-bold px-2 py-1 uppercase tracking-wider">
-                    Best Seller
-                  </span>
-                )}
-              </div>
-              <div className="p-4">
-                <h3 className="font-medium text-lg mb-1 group-hover:text-[var(--color-primary)] transition-colors">Premium Essential Tee</h3>
-                <p className="text-[var(--color-text-secondary)] text-sm mb-3">Organic Cotton Blend</p>
-                <div className="flex items-center justify-between">
-                  <span className="font-bold">$45.00</span>
-                  <button className="text-xs font-bold uppercase border-b border-transparent hover:border-current transition-all">
-                    Add to Cart
-                  </button>
+                <div className="p-4">
+                  <h3 className="font-medium text-lg mb-1 group-hover:text-primary transition-colors">Remera Premium Essential</h3>
+                  <p className="text-muted-foreground text-sm mb-3">Algodón Orgánico</p>
+                  <div className="flex items-center justify-between">
+                    <span className="font-bold">$45.000</span>
+                    <Link href="/products" className="text-xs font-bold uppercase border-b border-transparent hover:border-current transition-all">
+                      Ver Detalles
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
       {/* Brand Values / Trust Signals */}
-      <section className="bg-[var(--color-bg-secondary)] py-20 mt-8">
-        <div className="container">
+      <section className="py-24 mt-12 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[var(--linear-surface)] opacity-10 pointer-events-none"></div>
+        <div className="container relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-            <div>
-              <div className="bg-[var(--color-bg-primary)] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" /><polyline points="3.27 6.96 12 12.01 20.73 6.96" /><line x1="12" y1="22.08" x2="12" y2="12" /></svg>
+            <div className="p-8 rounded-2xl bg-card border border-white/5 hover:border-primary transition-colors duration-300">
+              <div className="w-16 h-16 rounded-full bg-background flex items-center justify-center mx-auto mb-6 shadow-glow text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" /><polyline points="3.27 6.96 12 12.01 20.73 6.96" /><line x1="12" y1="22.08" x2="12" y2="12" /></svg>
               </div>
-              <h3 className="text-lg font-bold mb-3">Premium Quality</h3>
-              <p className="text-[var(--color-text-secondary)] text-sm leading-relaxed">
-                Sourced from the finest materials to ensure lasting durability and comfort.
+              <h3 className="h3 mb-3">Calidad Premium</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Productos seleccionados bajo los estándares más exigentes. Durabilidad y diseño en cada detalle.
               </p>
             </div>
-            <div>
-              <div className="bg-[var(--color-bg-primary)] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /><path d="M2 12h20" /></svg>
+            <div className="p-8 rounded-2xl bg-card border border-white/5 hover:border-secondary transition-colors duration-300">
+              <div className="w-16 h-16 rounded-full bg-background flex items-center justify-center mx-auto mb-6 shadow-glow text-secondary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><path d="M16 12l-4-4-4 4" /><path d="M12 16V8" /></svg>
               </div>
-              <h3 className="text-lg font-bold mb-3">Sustainable Sourcing</h3>
-              <p className="text-[var(--color-text-secondary)] text-sm leading-relaxed">
-                Committed to ethical production and minimizing our environmental footprint.
+              <h3 className="h3 mb-3">Envío Rápido</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Llegamos a todo el país. Recibí tu pedido en tiempo récord y con seguimiento en real.
               </p>
             </div>
-            <div>
-              <div className="bg-[var(--color-bg-primary)] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" /><path d="m9 12 2 2 4-4" /></svg>
+            <div className="p-8 rounded-2xl bg-card border border-white/5 hover:border-primary transition-colors duration-300">
+              <div className="w-16 h-16 rounded-full bg-background flex items-center justify-center mx-auto mb-6 shadow-glow text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2" /><line x1="1" y1="10" x2="23" y2="10" /></svg>
               </div>
-              <h3 className="text-lg font-bold mb-3">Secure Payment</h3>
-              <p className="text-[var(--color-text-secondary)] text-sm leading-relaxed">
-                Your data is protected with state-of-the-art encryption standards.
+              <h3 className="h3 mb-3">Compra Segura</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Tu seguridad es nuestra prioridad. Pagá con confianza a través de plataformas encriptadas.
               </p>
             </div>
           </div>

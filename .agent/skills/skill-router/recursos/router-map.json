@@ -1,0 +1,47 @@
+{
+  "intents": [
+    "qa_fix",
+    "qa_audit",
+    "planning",
+    "brainstorming",
+    "branding",
+    "doc_to_app",
+    "unknown"
+  ],
+  "skill_by_intent": {
+    "qa_fix": "modo-produccion",
+    "qa_audit": "control-de-calidad",
+    "planning": "planificacion-pro",
+    "brainstorming": "brainstorming-pro",
+    "branding": "estilo-marca",
+    "doc_to_app": "doc-to-app",
+    "unknown": "skill-router"
+  },
+  "priority_rules": [
+    {
+      "trigger": "conflict_qa_fix_vs_audit",
+      "rule": "If user mentions 'fix', 'arreglar', 'corregir' -> prioritize qa_fix"
+    },
+    {
+      "trigger": "conflict_branding_vs_brainstorming",
+      "rule": "If user mentions specific assets 'logo', 'colores', 'tipografía' -> prioritize branding"
+    }
+  ],
+  "keyword_hints": {
+    "qa_fix": ["arreglar", "corregir", "fix", "bug", "error", "no funciona", "roto", "fallo"],
+    "qa_audit": ["auditar", "revisar", "evaluar", "analizar", "checkear", "verificar", "estado"],
+    "planning": ["plan", "roadmap", "fases", "tiempos", "entregables", "cronograma", "organizar"],
+    "brainstorming": ["ideas", "nombres", "variantes", "sugerencias", "opciones", "alternativas", "creatividad"],
+    "branding": ["marca", "logo", "tipografía", "colores", "tono", "estilo", "identidad", "visual"],
+    "doc_to_app": ["doc a app", "convertir documento", "index.html", "data.json", "mini app", "transformar doc"]
+  },
+  "safety_flags": {
+    "modo-produccion": ["requires_confirmation", "dry_run_mandatory"],
+    "doc-to-app": ["sanitization_required"],
+    "estilo-marca": ["read_only_resources"]
+  },
+  "fallback": {
+    "strategy": "ask_user",
+    "options": ["brainstorming-pro", "planificacion-pro", "control-de-calidad"]
+  }
+}

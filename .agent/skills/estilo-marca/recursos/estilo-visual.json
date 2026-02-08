@@ -1,0 +1,137 @@
+{
+    "brand": {
+        "name": "TecnoDespegue",
+        "website": "https://www.tecnodespegue.com/",
+        "personality": [
+            "moderna",
+            "premium",
+            "directa",
+            "orientada a resultados",
+            "tech"
+        ],
+        "tone": {
+            "language": "es-AR",
+            "voice": "cercana-profesional",
+            "style": [
+                "claridad",
+                "confianza",
+                "sin humo",
+                "con CTA"
+            ]
+        }
+    },
+    "typography": {
+        "font_display": {
+            "family": "Space Grotesk",
+            "weights": [
+                500,
+                600,
+                700
+            ]
+        },
+        "font_ui": {
+            "family": "Inter",
+            "weights": [
+                400,
+                500,
+                600
+            ]
+        },
+        "scale": {
+            "h1": {
+                "size": "48px",
+                "line": "56px",
+                "weight": 700,
+                "tracking": "-0.02em"
+            },
+            "h2": {
+                "size": "36px",
+                "line": "44px",
+                "weight": 700,
+                "tracking": "-0.02em"
+            },
+            "h3": {
+                "size": "28px",
+                "line": "36px",
+                "weight": 600,
+                "tracking": "-0.01em"
+            },
+            "body": {
+                "size": "16px",
+                "line": "26px",
+                "weight": 400
+            },
+            "small": {
+                "size": "14px",
+                "line": "22px",
+                "weight": 400
+            }
+        }
+    },
+    "colors": {
+        "bg": {
+            "900": "#0B1220",
+            "800": "#101B2F"
+        },
+        "text": {
+            "primary": "#EAF0FF",
+            "secondary": "#A7B3D1"
+        },
+        "border": "#1F2A44",
+        "primary": {
+            "main": "#00D4FF",
+            "hover": "#00B8E6"
+        },
+        "secondary": {
+            "main": "#7C3AED"
+        },
+        "semantic": {
+            "success": "#22C55E",
+            "warning": "#F59E0B",
+            "danger": "#EF4444",
+            "info": "#38BDF8"
+        },
+        "gradient": "linear-gradient(90deg, #00D4FF 0%, #7C3AED 100%)"
+    },
+    "ui": {
+        "radius": {
+            "sm": "10px",
+            "md": "14px",
+            "lg": "18px",
+            "xl": "24px"
+        },
+        "shadow": {
+            "sm": "0 6px 18px rgba(0,0,0,.25)",
+            "md": "0 14px 40px rgba(0,0,0,.35)"
+        },
+        "stroke": {
+            "icon": 1.8
+        },
+        "spacing": [
+            4,
+            8,
+            12,
+            16,
+            20,
+            24,
+            32,
+            40,
+            48,
+            64,
+            80
+        ]
+    },
+    "imagery": {
+        "style": "realista-tech con luces suaves",
+        "backgrounds": [
+            "degradados oscuros",
+            "texturas sutiles",
+            "grid fino"
+        ],
+        "icons": {
+            "type": "outline",
+            "corner": "rounded",
+            "weight": "medium"
+        }
+    }
+}

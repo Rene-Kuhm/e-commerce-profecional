@@ -1,0 +1,18 @@
+{
+    "dm": {
+        "suave": "Si te sirve, escribime y te cuento más.",
+        "medio": "Mandame un DM con la palabra '{keyword}' y te paso la info.",
+        "directo": "Comentá '{keyword}' abajo y te lo envío YA."
+    },
+    "whatsapp_link": {
+        "suave": "Podés ver más info en el link de mi perfil.",
+        "medio": "Hacé clic en el enlace de la bio para hablar directo.",
+        "directo": "No pierdas tiempo, escribime al WhatsApp acá: https://tecnodespegue.com/whatsapp"
+    },
+    "comentario": {
+        "trigger_web": "Comentá 'WEB' si querés mejorar tu página.",
+        "trigger_tienda": "Escribí 'TIENDA' si vendés productos.",
+        "trigger_sistema": "Poné 'SISTEMA' si necesitás organizar tu negocio.",
+        "trigger_rubro": "Si no sabés qué te conviene, comentá 'RUBRO'."
+    }
+}

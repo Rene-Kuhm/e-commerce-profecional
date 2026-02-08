@@ -1,0 +1,117 @@
+[
+    {
+        "id": "web_landing_express",
+        "name": "Web / Landing Express",
+        "audience": "Profesionales y Servicios",
+        "problem": "Necesitás presencia online urgente pero no tenés tiempo ni ganas de vueltas.",
+        "ideal_for": "Abogados, contadores, oficios, consultores.",
+        "includes": [
+            "Landing Page One-Page de alto impacto",
+            "Secciones: Hero, Beneficios, Servicios, Testimonios, CTA",
+            "Integración directa a WhatsApp",
+            "Dominio .com.ar (tramitación)",
+            "Hosting bonificado 1 año",
+            "Certificado SSL (candadito verde)"
+        ],
+        "excludes": [
+            "Carrito de compras",
+            "Login de usuarios",
+            "Redacción de textos (los provee el cliente o se cotiza aparte)"
+        ],
+        "timeline": "3 a 5 días hábiles",
+        "requirements": [
+            "Logo",
+            "Fotos",
+            "Textos base"
+        ],
+        "deliverables": [
+            "Link funcionando",
+            "Acceso a panel básico"
+        ],
+        "dod": "Web publicada, formulario testeado, carga en < 3s.",
+        "risk": "Que el cliente tarde en pasar el contenido."
+    },
+    {
+        "id": "tienda_pro",
+        "name": "Tienda E-commerce Pro",
+        "audience": "Comercios y Emprendedores que venden productos",
+        "problem": "Vendés por Instagram pero te volvés loco contestando precios y coordinando envíos.",
+        "ideal_for": "Indumentaria, Deco, Accesorios, Tecnología.",
+        "includes": [
+            "Catálogo de hasta 50 productos",
+            "Carrito y Checkout integrado",
+            "Pasarela de pagos (MercadoPago)",
+            "Cálculo de envíos (Correo Argentino / Andreani)",
+            "Panel autoadministrable fácil",
+            "Capacitación en video grabada"
+        ],
+        "excludes": [
+            "Carga masiva de más de 50 productos",
+            "Fotografía de producto",
+            "Integraciones complejas con ERP"
+        ],
+        "timeline": "10 a 15 días hábiles",
+        "requirements": [
+            "Lista de precios",
+            "Fotos de productos",
+            "Cuenta MP activa"
+        ],
+        "deliverables": [
+            "Tienda operativa",
+            "Credenciales de acceso",
+            "Video tutorial"
+        ],
+        "dod": "Compra de prueba exitosa, stock descontado.",
+        "risk": "Configuraciones de envíos complejas sin API."
+    },
+    {
+        "id": "sistema_medida",
+        "name": "Sistema / App a Medida",
+        "audience": "Pymes y Startups",
+        "problem": "Los enlatados no te sirven, necesitás un flujo de trabajo específico.",
+        "ideal_for": "Logística, Turnos complejos, Gestión interna, SAAS.",
+        "includes": [
+            "Relevamiento de procesos",
+            "UX/UI personalizado",
+            "Desarrollo Frontend y Backend",
+            "Base de datos optimizada",
+            "Panel de administración a medida",
+            "Deploy en servidor Cloud"
+        ],
+        "excludes": [
+            "Mantenimiento post-garantía (se cotiza mensual)",
+            "Marketing de la app"
+        ],
+        "timeline": "4 a 8 semanas (según alcance)",
+        "requirements": [
+            "Reunión de definición",
+            "Procesos claros"
+        ],
+        "deliverables": [
+            "Código fuente (según contrato)",
+            "Documentación técnica",
+            "Ambiente Productivo"
+        ],
+        "dod": "UAT (User Acceptance Testing) aprobado por cliente.",
+        "risk": "Cambios de alcance durante el desarrollo (Scope creep)."
+    },
+    {
+        "id": "mantenimiento",
+        "name": "Mantenimiento y Soporte (Opcional)",
+        "audience": "Todos",
+        "problem": "Tener la web caída o desactualizada y no saber a quién llamar.",
+        "includes": [
+            "Monitoreo de uptime",
+            "Backups semanales",
+            "Actualizaciones de seguridad",
+            "Pequeños ajustes de contenido (texto/fotos)"
+        ],
+        "excludes": [
+            "Desarrollo de nuevas funcionalidades",
+            "Rediseño"
+        ],
+        "timeline": "Mensual",
+        "requirements": "Web desarrollada por nosotros o auditoría previa.",
+        "deliverables": "Reporte mensual de estado."
+    }
+]

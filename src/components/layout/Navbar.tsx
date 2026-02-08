@@ -11,30 +11,34 @@ export function Navbar() {
 
     return (
         <>
-            <header className="sticky top-0 z-50 w-full border-b border-[var(--color-border)] bg-[var(--color-bg-primary)]/80 backdrop-blur-md">
-                <div className="container h-[var(--header-height)] flex items-center justify-between">
+            <header className="sticky top-0 z-50 w-full glass">
+                <div className="container py-4 flex items-center justify-between">
                     <div className="flex items-center gap-8">
-                        <Link href="/" className="text-xl font-bold tracking-tight">
-                            LUXE<span className="text-[var(--color-accent)]">.</span>
+                        <Link href="/" className="h3 tracking-tighter">
+                            TECNODESPEGUE<span className="text-[var(--color-primary)]">.</span>
                         </Link>
-                        <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-[var(--color-text-secondary)]">
-                            <Link href="/products" className="hover:text-[var(--color-text-primary)] transition-colors">
-                                Collection
+                        <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-muted-foreground">
+                            <Link href="/products" className="hover:text-foreground transition-colors">
+                                Colección
                             </Link>
-                            <Link href="/new-arrivals" className="hover:text-[var(--color-text-primary)] transition-colors">
-                                New Arrivals
+                            <Link href="/new-arrivals" className="hover:text-foreground transition-colors">
+                                Novedades
                             </Link>
-                            <Link href="/about" className="hover:text-[var(--color-text-primary)] transition-colors">
-                                Our Story
+                            <Link href="/about" className="hover:text-foreground transition-colors">
+                                Nosotros
                             </Link>
                         </nav>
                     </div>
 
                     <div className="flex items-center gap-4">
-                        <button className="text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors">
-                            {/* Search Icon Placeholder */}
+                        <Link
+                            href="/products?search="
+                            className="text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors"
+                            title="Buscar productos"
+                        >
+                            {/* Search Icon */}
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" /></svg>
-                        </button>
+                        </Link>
                         <button
                             onClick={() => setIsCartOpen(true)}
                             className="text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors relative"

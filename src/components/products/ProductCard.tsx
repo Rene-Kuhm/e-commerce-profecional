@@ -8,19 +8,19 @@ export function ProductCard({ product }: { product: Product }) {
     const { addToCart } = useShop();
 
     return (
-        <div className="card group flex flex-col h-full bg-[var(--color-bg-primary)]">
-            <div className="relative aspect-[3/4] overflow-hidden bg-[var(--color-bg-tertiary)]">
+        <div className="card group flex flex-col h-full relative border-border/50">
+            <div className="relative aspect-[3/4] overflow-hidden bg-muted/30">
                 <Image
                     src={product.image}
                     alt={product.name}
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
 
                 {product.isNew && (
-                    <span className="absolute top-3 left-3 bg-[var(--color-text-primary)] text-[var(--color-bg-primary)] text-xs font-bold px-2 py-1 uppercase tracking-wider z-10">
-                        New Arrival
+                    <span className="absolute top-3 left-3 bg-[var(--color-secondary)] text-white text-xs font-bold px-3 py-1 uppercase tracking-wider z-10 rounded-[var(--radius-sm)] shadow-sm">
+                        Nuevo
                     </span>
                 )}
 
@@ -31,9 +31,9 @@ export function ProductCard({ product }: { product: Product }) {
                             e.preventDefault();
                             addToCart(product);
                         }}
-                        className="w-full btn btn-accent text-sm py-2 shadow-lg transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-100"
+                        className="w-full btn btn-primary text-sm shadow-lg transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-100"
                     >
-                        Add to Cart
+                        Agregar al Carrito
                     </button>
                 </div>
             </div>
@@ -49,6 +49,6 @@ export function ProductCard({ product }: { product: Product }) {
                     <span className="font-bold text-lg">${product.price.toFixed(2)}</span>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
