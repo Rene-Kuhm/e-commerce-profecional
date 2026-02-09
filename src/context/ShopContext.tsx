@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 
 // Types
 export interface Product {
@@ -256,31 +256,40 @@ export function ShopProvider({ children }: { children: React.ReactNode }) {
         }
     }, [cart, isClient]);
 
-    const addToCart = (product: Product) => {
-        setCart((prev) => {
-            const existing = prev.find((item) => item.id === product.id);
-            if (existing) {
-                return prev.map((item) =>
-                    item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+    // Add product to cart
+    const addToCart = useCallback((product: Product) => {
+        setCart((prevCart) => {
+            const existingItem = prevCart.find((item) => item.id === product.id);
+
+            if (existingItem) {
+                return prevCart.map((item) =>
+                    item.id === product.id
+                        ? { ...item, quantity: item.quantity + 1 }
+                        : item
                 );
             }
-            return [...prev, { ...product, quantity: 1 }];
+
+            return [...prevCart, { ...product, quantity: 1 }];
         });
-    };
+    }, []);
 
-    const removeFromCart = (productId: string) => {
+    const removeFromCart = useCallback((productId: string) => {
         setCart((prev) => prev.filter((item) => item.id !== productId));
-    };
+    }, []);
 
-    const updateQuantity = (productId: string, quantity: number) => {
-        if (quantity < 1) {
+    // Update quantity
+    const updateQuantity = useCallback((productId: string, quantity: number) => {
+        if (quantity <= 0) {
             removeFromCart(productId);
             return;
         }
-        setCart((prev) =>
-            prev.map((item) => (item.id === productId ? { ...item, quantity } : item))
+
+        setCart((prevCart) =>
+            prevCart.map((item) =>
+                item.id === productId ? { ...item, quantity } : item
+            )
         );
-    };
+    }, [removeFromCart]);
 
     const cartTotal = cart.reduce((total, item) => total + item.price * item.quantity, 0);
     const cartCount = cart.reduce((count, item) => count + item.quantity, 0);

@@ -138,6 +138,16 @@
     }
   }
 
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
@@ -148,5 +158,9 @@
 
   .animate-scroll:hover {
     animation-play-state: paused;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s infinite;
   }
 }

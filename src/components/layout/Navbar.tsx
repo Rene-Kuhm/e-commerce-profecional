@@ -35,6 +35,7 @@ export function Navbar() {
                             href="/products?search="
                             className="text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors"
                             title="Buscar productos"
+                            aria-label="Buscar productos"
                         >
                             {/* Search Icon */}
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" /></svg>
@@ -42,6 +43,7 @@ export function Navbar() {
                         <button
                             onClick={() => setIsCartOpen(true)}
                             className="text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors relative"
+                            aria-label={cartCount > 0 ? `Ver carrito con ${cartCount} productos` : "Ver carrito"}
                         >
                             {/* Cart Icon Placeholder */}
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="8" cy="21" r="1" /><circle cx="19" cy="21" r="1" /><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" /></svg>

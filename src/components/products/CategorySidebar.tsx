@@ -68,7 +68,7 @@ export function CategorySidebar({ onFilterChange, activeFilters }: CategorySideb
         activeFilters.priceRange[1] < Infinity;
 
     return (
-        <aside className="w-full lg:w-64 space-y-6">
+        <nav className="flex flex-col gap-6" role="navigation" aria-label="Filtros de productos">
             {/* Header */}
             <div className="flex items-center justify-between">
                 <h2 className="font-display text-xl font-bold">Filtros</h2>
@@ -158,6 +158,6 @@ export function CategorySidebar({ onFilterChange, activeFilters }: CategorySideb
                     {activeFilters.categories.length} {activeFilters.categories.length === 1 ? 'filtro activo' : 'filtros activos'}
                 </div>
             )}
-        </aside>
+        </nav>
     );
 }

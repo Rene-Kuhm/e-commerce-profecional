@@ -3,10 +3,10 @@
 import { useShop } from '@/context/ShopContext';
 import { ProductCard } from '@/components/products/ProductCard';
 import { CategorySidebar, FilterState } from '@/components/products/CategorySidebar';
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 
-export default function ProductsPage() {
+function ProductsContent() {
     const { products } = useShop();
     const searchParams = useSearchParams();
     const [searchQuery, setSearchQuery] = useState('');
@@ -166,5 +166,26 @@ export default function ProductsPage() {
                 </main>
             </div>
         </div>
+    );
+}
+
+export default function ProductsPage() {
+    return (
+        <Suspense fallback={
+            <div className="container py-8">
+                <div className="h-8 w-32 bg-muted animate-pulse rounded mb-4" />
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    {[...Array(8)].map((_, i) => (
+                        <div key={i} className="animate-pulse">
+                            <div className="aspect-[3/4] bg-muted rounded mb-3" />
+                            <div className="h-4 bg-muted rounded w-3/4 mb-2" />
+                            <div className="h-4 bg-muted rounded w-1/2" />
+                        </div>
+                    ))}
+                </div>
+            </div>
+        }>
+            <ProductsContent />
+        </Suspense>
     );
 }

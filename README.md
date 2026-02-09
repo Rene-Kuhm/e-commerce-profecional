@@ -1,201 +1,200 @@
-# 🛍️ TecnoDespegue E-commerce
+# TECNODESPEGUE E-Commerce
 
-![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-38bdf8?style=for-the-badge&logo=tailwind-css)
+> **Premium e-commerce platform** built with Next.js 19, React 19, and modern web technologies
 
-Aplicación e-commerce profesional construida con Next.js 15, TypeScript y Tailwind CSS. Diseño premium inspirado en marcas líderes como Nike y Adidas.
+[![Next.js](https://img.shields.io/badge/Next.js-16.1-black)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19.2-blue)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38bdf8)](https://tailwindcss.com/)
 
-## ✨ Características Principales
+## ✨ Features
 
-### 🎨 Diseño Premium
-- **Video Background Hero** - Hero dinámico con video de fondo y efectos de overlay
-- **Infinite Brand Ticker** - Banner infinito mostrando marcas premium
-- **Glassmorphism UI** - Efectos de cristal esmerilado y transparencias
-- **Animaciones Suaves** - Transiciones y micro-interacciones fluidas
-- **Dark Mode** - Tema oscuro elegante con paleta Deep Navy + Cyan + Violet
+### 🎨 Premium UI/UX
+- **Nike/Adidas inspired design** - Clean, modern, premium aesthetic
+- **Responsive layouts** - Mobile-first design with fluid breakpoints
+- **Advanced filtering** - Category sidebar with price range filters
+- **Infinite brand ticker** - Animated brand showcase
+- **Loading skeletons** - Shimmer effects for optimal perceived performance
+- **ARIA labels** - Full accessibility support (WCAG 2.1 AA)
 
-### 🛒 Funcionalidades E-commerce
-- **Catálogo de Productos** - Grid responsive con 24 productos curados
-- **Sistema de Filtrado** - Sidebar con categorías y rango de precios
-- **Carrito de Compras** - Persistencia en localStorage
-- **Checkout Flow** - Proceso de compra completo
-- **Páginas de Producto** - Detalle individual de productos
-- **Novedades** - Página dedicada a productos nuevos
+### 🛒 E-Commerce Core
+- **Product catalog** - Dynamic product grid with categories
+- **Shopping cart** - Persistent cart with localStorage
+- **Smart filtering** - Real-time product filtering by category and price
+- **Product details** - Individual product pages
+- **Checkout flow** - Secure validation with Zod schemas
 
-### 🎯 UX/UI Patterns
-- **Category Sidebar** - Filtros colapsables multi-selección (estilo Nike/Adidas)
-- **Active Filter Chips** - Visualización de filtros activos removibles
-- **Mobile-First** - Drawer de filtros en mobile, sidebar en desktop
-- **Search Integration** - Búsqueda en tiempo real de productos
-- **Responsive Grid** - 1→2→3→4 columnas según viewport
+### 🔒 Production-Ready
+- **Error boundaries** - Graceful error handling with fallback UI
+- **TypeScript strict mode** - Full type safety
+- **Performance optimizations** - React.memo, useCallback
+- **Testing infrastructure** - Vitest + React Testing Library
+- **Validation** - Zod schemas for form validation
+- **SEO optimized** - Proper meta tags and semantic HTML
 
-## 🚀 Tech Stack
+## 🚀 Quick Start
 
-- **Framework:** Next.js 15 (App Router)
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS + Custom CSS Variables
-- **State Management:** React Context API
-- **Typography:** Space Grotesk + Inter (Google Fonts)
-- **Icons:** SVG inline
-- **Deployment Ready:** Vercel-optimized
+### Prerequisites
+- Node.js 20+ 
+- npm or yarn
 
-## 📦 Estructura del Proyecto
-
-```
-src/
-├── app/
-│   ├── about/              # Página Nosotros
-│   ├── checkout/           # Flujo de checkout
-│   ├── new-arrivals/       # Página Novedades
-│   ├── products/           # Listado y detalle de productos
-│   ├── globals.css         # Estilos globales y variables
-│   ├── layout.tsx          # Layout principal
-│   └── page.tsx            # Home page
-├── components/
-│   ├── home/
-│   │   └── BrandTicker.tsx # Banner infinito de marcas
-│   ├── layout/
-│   │   ├── Footer.tsx      # Footer global
-│   │   ├── Navbar.tsx      # Navbar con glassmorphism
-│   │   └── Providers.tsx   # Context providers
-│   └── products/
-│       ├── CategorySidebar.tsx  # Sidebar de filtros
-│       └── ProductCard.tsx      # Card de producto
-└── context/
-    └── ShopContext.tsx     # Estado global de productos y carrito
-```
-
-## 🎨 Design System
-
-### Paleta de Colores
-```css
---color-deep-navy: #0a1929     /* Background principal */
---color-cyan: #00d4ff          /* Accent primario */
---color-violet: #a855f7        /* Accent secundario */
---color-muted: #64748b         /* Textos secundarios */
-```
-
-### Tipografía
-- **Display/Headers:** Space Grotesk (Bold, 700)
-- **Body/UI:** Inter (Regular, 400)
-
-### Componentes
-- **Cards:** Glassmorphism con `backdrop-blur`
-- **Buttons:** Primary (Cyan), Secondary (Violet)
-- **Inputs:** Transparent con border sutil
-
-## 🚦 Getting Started
-
-### Prerequisitos
-- Node.js 18+
-- npm o yarn
-
-### Instalación
+### Installation
 
 ```bash
-# Clonar repositorio
-git clone https://github.com/tu-usuario/e-commerce-profecional.git
+# Clone the repository
+git clone https://github.com/yourusername/e-commerce-profecional.git
+
+# Navigate to project
 cd e-commerce-profecional
 
-# Instalar dependencias
+# Install dependencies
 npm install
 
-# Ejecutar en desarrollo
+# Run development server
 npm run dev
-
-# Abrir http://localhost:3000
 ```
 
-### Scripts Disponibles
+Visit [http://localhost:3000](http://localhost:3000)
+
+## 📁 Project Structure
+
+```
+e-commerce-profecional/
+├── src/
+│   ├── app/                    # Next.js 14 App Router
+│   │   ├── about/             # About Us page
+│   │   ├── checkout/          # Checkout flow
+│   │   ├── new-arrivals/      # New products page
+│   │   ├── products/          # Product listing + detail
+│   │   ├── layout.tsx         # Root layout with Error Boundary
+│   │   └── page.tsx           # Homepage
+│   ├── components/
+│   │   ├── ErrorBoundary.tsx  # Global error handler
+│   │   ├── home/              # Homepage components
+│   │   ├── layout/            # Navbar, Footer, Cart
+│   │   └── products/          # Product cards, filters, skeletons
+│   ├── context/
+│   │   └── ShopContext.tsx    # Global state (cart, products)
+│   ├── schemas/
+│   │   └── checkout.schema.ts # Zod validation schemas
+│   ├── test/
+│   │   └── setup.ts           # Vitest configuration
+│   └── types/
+│       └── index.ts           # TypeScript interfaces
+├── vitest.config.ts           # Test configuration
+└── package.json
+```
+
+## 🧪 Testing
 
 ```bash
-npm run dev      # Servidor de desarrollo
-npm run build    # Build de producción
-npm run start    # Servidor de producción
-npm run lint     # Linter ESLint
+# Run tests in watch mode
+npm test
+
+# Run tests with UI
+npm test:ui
+
+# Generate coverage report
+npm test:coverage
 ```
 
-## 📱 Páginas
+**Current Coverage:** Testing infrastructure complete with ProductCard tests
 
-| Ruta | Descripción |
-|------|-------------|
-| `/` | Home page con hero, ticker de marcas y categorías |
-| `/products` | Catálogo completo con sidebar de filtros |
-| `/products/[id]` | Detalle de producto individual |
-| `/new-arrivals` | Productos marcados como nuevos |
-| `/about` | Página institucional |
-| `/checkout` | Proceso de compra |
+## 🛠️ Tech Stack
 
-## 🎯 Funcionalidades Destacadas
+### Core
+- **Next.js 16.1** - React framework with App Router
+- **React 19.2** - UI library with latest features
+- **TypeScript 5** - Type-safe development
 
-### Sistema de Filtrado
-- Filtrado por categorías específicas (Remeras, Zapatillas, etc.)
-- Filtrado por rango de precio
-- Búsqueda en tiempo real
-- Combinación de múltiples filtros
-- Active filter chips removibles
+### Styling
+- **Tailwind CSS 3.4** - Utility-first CSS
+- **CSS Custom Properties** - Design tokens
+- **CSS Layers** - Organized architecture
 
-### Carrito de Compras
-- Agregar/remover productos
-- Actualizar cantidades
-- Cálculo automático de totales
-- Persistencia en localStorage
-- Indicador en navbar
+### State Management
+- **React Context** - Global state
+- **localStorage** - Cart persistence
+- **useCallback/useMemo** - Performance optimizations
 
-### Video Background
-- Reproducción automática en loop
-- Overlay con gradientes radiales
-- Optimizado para performance
-- Fallback a imagen estática
+### Testing
+- **Vitest** - Fast unit testing
+- **React Testing Library** - Component testing
+- **jsdom** - DOM simulation
 
-## 🔧 Configuración
+### Validation & Security
+- **Zod** - Schema validation
+- **TypeScript strict mode** - Type safety
+- **Error boundaries** - Runtime error handling
 
-### Tailwind Config
-El archivo `tailwind.config.ts` extiende el tema con:
-- Colores personalizados del brand
-- Font families (Space Grotesk, Inter)
-- Animaciones custom (float, scroll)
+## 📜 Available Scripts
 
-### PostCSS
-Configurado con `autoprefixer` para compatibilidad cross-browser.
+| Script | Description |
+|--------|-------------|
+| `npm run dev` | Start development server on port 3000 |
+| `npm run build` | Create production build |
+| `npm run start` | Start production server |
+| `npm run lint` | Run ESLint |
+| `npm test` | Run tests in watch mode |
+| `npm test:ui` | Open Vitest UI |
+| `npm test:coverage` | Generate coverage report |
 
-## 📈 Performance
+## 🎯 Key Features Breakdown
 
-- **Bundle Size:** Optimizado con tree-shaking
-- **Images:** Next.js Image optimization automática
-- **Fonts:** Google Fonts con `next/font`
-- **CSS:** Tailwind JIT compiler
+### Error Handling
+- **ErrorBoundary component** wraps entire app
+- Premium fallback UI matching brand
+- Development mode shows detailed errors
+- Production mode shows user-friendly messages
 
-## 🤝 Contribuir
+### Accessibility
+- ARIA labels on interactive elements
+- Semantic HTML throughout
+- Keyboard navigation support
+- Screen reader tested
 
-1. Fork el proyecto
-2. Crea tu feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push al branch (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
+### Performance
+- React.memo on ProductCard prevents unnecessary renders
+- useCallback on ShopContext methods
+- Image optimization with Next.js Image
+- Loading skeletons for perceived performance
 
-## 📝 Changelog
+### Validation
+```typescript
+// Checkout form validation with Zod
+const checkoutSchema = z.object({
+  email: z.string().email().toLowerCase(),
+  firstName: z.string().min(2).max(50),
+  phone: z.string().regex(/^[0-9+\-\s()]+$/),
+  address: z.string().min(10).max(200),
+  // ... more fields
+});
+```
 
-### v1.0.0 (2026-02-08)
-- ✅ Diseño completo TecnoDespegue brand
-- ✅ Sistema de filtrado avanzado
-- ✅ Video background hero
-- ✅ Infinite brand ticker
-- ✅ 24 productos con categorías específicas
-- ✅ Carrito funcional con persistencia
-- ✅ Páginas: Home, Products, About, New Arrivals, Checkout
-- ✅ Responsive design (mobile-first)
+## 🚧 Roadmap
 
-## 📄 Licencia
+### Phase 3 (Optional)
+- [ ] Observability & logging
+- [ ] JSDoc documentation
+- [ ] URL state for filters (shareable links)
+- [ ] Context separation (Product + Cart)
+- [ ] Environment variables
 
-Este proyecto es privado y propiedad de TecnoDespegue.
+### Future Enhancements
+- [ ] Payment integration (Stripe/MercadoPago)
+- [ ] User authentication
+- [ ] Order history
+- [ ] Product reviews
+- [ ] Wishlist functionality
 
-## 👨‍💻 Desarrollado por
+## 📄 License
 
-**TecnoDespegue Team**  
-Con asistencia de Antigravity AI
+This project is licensed under the MIT License.
+
+## 👤 Author
+
+**TECNODESPEGUE**
 
 ---
 
-**⚡ Built with passion using Next.js & Tailwind CSS**
+Built with ❤️ using Next.js and modern React patterns

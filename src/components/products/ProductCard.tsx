@@ -1,10 +1,15 @@
 'use client';
 
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useShop, Product } from '@/context/ShopContext';
 
-export function ProductCard({ product }: { product: Product }) {
+interface ProductCardProps {
+    product: Product;
+}
+
+export const ProductCard = React.memo(function ProductCard({ product }: ProductCardProps) {
     const { addToCart } = useShop();
 
     return (
@@ -51,4 +56,4 @@ export function ProductCard({ product }: { product: Product }) {
             </div>
         </div >
     );
-}
+});
